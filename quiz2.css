@@ -1,0 +1,273 @@
+/* 基本 */
+body {
+    font-size: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 全站圖片維持原始寬高比 */
+
+.site {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.site .list {
+    margin-left: auto;
+    display: flex;
+    gap: 28px;
+}
+
+.lbzone {
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    text-align: center;
+}
+
+.lbzone .welcome {
+    font-size: 40px;
+}
+
+.main-vessel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* 1201px ~ 1920px（原有樣式，保留） */
+@media (min-width: 1201px) and (max-width: 1920px) {
+    .main {
+        width: 1200px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .allbars {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .bar {
+        background: #fff;
+        border: 1px;
+        display: flex;
+        align-items: center;
+        height: 100px;
+    }
+
+    .bar1 {
+        background-color: lightblue;
+        width: 100%;
+    }
+
+    .bar-row {
+        display: flex;
+        width: 100%;
+        background-color: white;
+        gap: 20px;
+    }
+
+    .bar2 {
+        flex: 2;
+        background-color: lightblue;
+        height: 100px;
+        margin-right: 10px;
+    }
+
+    .bar3 {
+        flex: 1;
+        background-color: lightblue;
+        height: 100px;
+    }
+
+    .bar-pic {
+        width: 80px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .bar-text {
+        padding: 0 18px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        /* 第一欄佔 1/3 */
+        gap: 20px;
+        grid-auto-rows: 260px;
+        /* 等高 */
+    }
+
+    .card {
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        /* 保持比例（可能裁切） */
+        border: none;
+        display: flex;
+        align-items: flex-end;
+        /* caption 底對齊 */
+    }
+
+    .card .star {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color: #e2af16;
+    }
+
+    .card .description {
+        width: 100%;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.5);
+        color: black;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ★ 600px < 寬度 ≤ 1200px（本題新需求） */
+@media (min-width: 601px) and (max-width: 1200px) {
+
+    /* 主內容 90% 寬，置中 */
+    .main {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* 長條圖：第一行 2 欄（各 50%），第二行 1 欄（100%） */
+    .allbars {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .bar-row.two-cols {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .bar {
+        background: #fff;
+        border: 1px;
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        background-color: lightblue;
+    }
+
+    .bar-half {
+        flex: 1 1 50%;
+    }
+
+    .bar-full {
+        width: 100%;
+    }
+
+    /* 長條圖中的圖片：寬 80px、高 50px，維持比例（不變形） */
+    .bar-pic {
+        width: 80px;
+        height: 50px;
+        object-fit: contain;
+        /* 維持比例；可能留白 */
+        flex: 0 0 auto;
+    }
+
+    .bar-text {
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        /* 至少與圖片等高 */
+        text-align: center;
+    }
+
+    /* 內容卡片：4 欄（各 25%），等高；最後一列兩張各 50% */
+    .cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 欄，每欄 25% */
+        gap: 20px;
+        grid-auto-rows: 240px;
+        /* 等高 */
+    }
+
+    .card {
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        /* 保持比例（可能裁切） */
+        border: none;
+        display: flex;
+        align-items: flex-end;
+        /* caption 底對齊 */
+    }
+
+    .card .star {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color: #e2af16;
+    }
+
+    .card .description {
+        width: 100%;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.5);
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* 讓第 9 與第 10 張各佔 2 欄（= 50%） */
+    .cards>.card:nth-child(9),
+    .cards>.card:nth-child(10) {
+        grid-column: span 2;
+    }
+}
