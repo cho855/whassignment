@@ -1,6 +1,11 @@
 body {
     font-size: 20px;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /*最寬*/
 .site {
@@ -168,4 +173,5 @@ body {
         align-items: center;
         justify-content: center;
     }
+
 }
